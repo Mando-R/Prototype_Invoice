@@ -1,0 +1,36 @@
+﻿@page
+@model RazorPagesMovie.Pages.Category.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Invoice Categories</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New Invoice Categories</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InvoiceCategory[0].Category)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.InvoiceCategory) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID" class="text-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

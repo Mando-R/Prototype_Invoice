@@ -1,0 +1,82 @@
+﻿@page
+<!-- @@model：對應 Controller - Index.cshtml.cs 的 IndexModel -->
+<!-- 指示詞 @@model 指定傳遞至頁面的模型類型 Razor。在上述範例中，這一行@@model讓 PageModel 衍生的類別可供頁面使用 Razor 。 
+    此模型用於頁面上的 @@Html.DisplayNameFor 和 @@Html.DisplayFor HTML 協助程式。 -->
+@model RazorPagesMovie.Pages.Movies.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!-- @@page 指示詞：Razor 讓檔案成為 MVC 動作，這表示它可以處理要求。
+     @@page 必須是頁面上的第一個 Razor 指示詞。@@page 和 @@model 是轉換為 Razor 特定標記的範例。 如需詳細資訊，請參閱 Razor 語法。 -->
+<!-- Razor 可以從 HTML 轉換成 c # 或 Razor 特定標記。
+    當 @@ 符號後面接著 Razor 保留關鍵字時，它會轉換為 Razor 特定標記，否則會轉換成 HTML。 -->
+
+<h1 class="">All Records</h1>
+
+<p>
+    <a class="btn btn-warning" asp-page="ElectronicInvoice">Create New Electronic Invoices</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectronicInvoice[0].CompanyID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectronicInvoice[0].InvoicePurpose)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectronicInvoice[0].InvoiceCategoryID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectronicInvoice[0].InvoiceDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectronicInvoice[0].InvoiceAmount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectronicInvoice[0].CreatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectronicInvoice[0].LatestUpdatedOn)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ElectronicInvoice)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoicePurpose)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceCategoryID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LatestUpdatedOn)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a class="text-danger" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

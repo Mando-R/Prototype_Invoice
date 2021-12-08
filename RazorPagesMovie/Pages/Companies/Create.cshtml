@@ -1,0 +1,64 @@
+﻿@page
+@model RazorPagesMovie.Pages.Companies.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Create New Companies</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Company.UnifiedBusinessNumber" class="control-label"></label>
+                <input asp-for="Company.UnifiedBusinessNumber" class="form-control" />
+                <span asp-validation-for="Company.UnifiedBusinessNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.CompanyName" class="control-label"></label>
+                <input asp-for="Company.CompanyName" class="form-control" />
+                <span asp-validation-for="Company.CompanyName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.TotalPaidinCapital" class="control-label"></label>
+                <input asp-for="Company.TotalPaidinCapital" class="form-control" />
+                <span asp-validation-for="Company.TotalPaidinCapital" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.LocationOfCompany" class="control-label"></label>
+                <input asp-for="Company.LocationOfCompany" class="form-control" />
+                <span asp-validation-for="Company.LocationOfCompany" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Company.DateOfRegistration" class="control-label"></label>
+                <input asp-for="Company.DateOfRegistration" class="form-control" />
+                <span asp-validation-for="Company.DateOfRegistration" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Company.CreatedOn" class="control-label"></label>
+                <input asp-for="Company.CreatedOn" class="form-control" />
+                <span asp-validation-for="Company.CreatedOn" class="text-danger"></span>
+            </div>*@
+            @*<div class="form-group">
+                <label asp-for="Company.LatestUpdatedOn" class="control-label"></label>
+                <input asp-for="Company.LatestUpdatedOn" class="form-control" />
+                <span asp-validation-for="Company.LatestUpdatedOn" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

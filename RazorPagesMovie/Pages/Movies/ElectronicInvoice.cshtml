@@ -1,0 +1,67 @@
+﻿@page
+@model RazorPagesMovie.Pages.Movies.ElectronicInvoiceModel
+@{
+    ViewData["Title"] = "ElectronicInvoice";
+}
+
+<h1>Create</h1>
+
+<h4>Create New Electronic Invoices</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <!-- 支出/收入 -->
+            @*<div class="form-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Action
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">支出</a></li>
+                        <li><a class="dropdown-item" href="#">收入</a></li>
+                    </ul>
+                </div>*@
+
+            <!-- CompanyID -->
+            <!-- InvoicePurpose 發票類別 -->
+            <div class="form-group">
+                <label asp-for="ElectronicInvoice.InvoicePurpose" class="control-label"></label>
+                @*<input asp-for="ElectronicInvoice.InvoicePurpose" class="form-control" />*@
+                <!-- asp-items 指定 option 項目 -->
+                <select asp-for="ElectronicInvoice.InvoicePurpose" class="form-control">
+                    @*<option value="== 請選擇 支出/收入 ==">== 請選擇 支出/收入 ==</option>*@
+                    <option value="支出">支出</option>
+                    <option value="收入">收入</option>
+                </select>
+
+                <span asp-validation-for="ElectronicInvoice.InvoicePurpose" class="text-danger"></span>
+            </div>
+            <!-- InvoiceCategory -->
+            <!-- InvoiceDate 發票日期 -->
+            <div class="form-group">
+                <label asp-for="ElectronicInvoice.InvoiceDate" class="control-label"></label>
+                <input asp-for="ElectronicInvoice.InvoiceDate" class="form-control" />
+                <span asp-validation-for="ElectronicInvoice.InvoiceDate" class="text-danger"></span>
+            </div>
+            <!-- InvoiceAmount 發票金額 -->
+            <div class="form-group">
+                <label asp-for="ElectronicInvoice.InvoiceAmount" class="control-label"></label>
+                <input asp-for="ElectronicInvoice.InvoiceAmount" class="form-control" />
+                <span asp-validation-for="ElectronicInvoice.InvoiceAmount" class="text-danger"></span>
+            </div>
+            <!-- Create Button -->
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

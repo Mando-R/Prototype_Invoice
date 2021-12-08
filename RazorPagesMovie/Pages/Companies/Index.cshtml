@@ -1,0 +1,72 @@
+﻿@page
+@model RazorPagesMovie.Pages.Companies.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>All Companies</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Create New Companies</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].UnifiedBusinessNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].CompanyName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].TotalPaidinCapital)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].LocationOfCompany)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].DateOfRegistration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].CreatedOn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Company[0].LatestUpdatedOn)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Company) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnifiedBusinessNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPaidinCapital)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocationOfCompany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfRegistration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LatestUpdatedOn)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID" class="text-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
