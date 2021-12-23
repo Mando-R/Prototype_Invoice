@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie.csproj": {}
+    "D:\\Projects\\Prototype_Invoice\\RazorPagesMovie\\RazorPagesMovie.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie.csproj": {
+    "D:\\Projects\\Prototype_Invoice\\RazorPagesMovie\\RazorPagesMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie.csproj",
+        "projectUniqueName": "D:\\Projects\\Prototype_Invoice\\RazorPagesMovie\\RazorPagesMovie.csproj",
         "projectName": "RazorPagesMovie",
-        "projectPath": "D:\\Projects\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie.csproj",
+        "projectPath": "D:\\Projects\\Prototype_Invoice\\RazorPagesMovie\\RazorPagesMovie.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie\\RazorPagesMovie\\obj\\",
+        "outputPath": "D:\\Projects\\Prototype_Invoice\\RazorPagesMovie\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

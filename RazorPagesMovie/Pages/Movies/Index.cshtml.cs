@@ -19,6 +19,8 @@ namespace RazorPagesMovie.Pages.Movies
         public IndexModel(RazorPagesMovie.Data.RazorPagesMovieContext context)
         {
             _context = context;
+
+            // ADO.NET
         }
 
         public IList<ElectronicInvoice> ElectronicInvoice { get;set; }
