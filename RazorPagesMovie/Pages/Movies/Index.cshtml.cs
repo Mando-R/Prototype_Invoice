@@ -131,6 +131,7 @@ namespace RazorPagesMovie.Pages.Movies
                 ryanViewModel.Id = dr["Id"].ToString();
 
                 InvoiceBindCategory invoiceBindCategory = new InvoiceBindCategory();
+                invoiceBindCategory.ID = (int)dr["ID"];
                 invoiceBindCategory.CompanyID = (int)dr["CompanyID"];
                 invoiceBindCategory.InvoicePurpose = dr["InvoicePurpose"].ToString();
                 invoiceBindCategory.InvoiceCategoryID = (int)dr["InvoiceCategoryID"];
